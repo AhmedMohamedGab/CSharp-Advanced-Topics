@@ -56,7 +56,20 @@ namespace CSharpAdvanced
 
             // MultiThreading
 
+            //var thread1 = new Thread(Thread1);
+            //var thread2 = new Thread(Thread2);
+            //thread1.Start();
+            //thread2.Start();
 
+
+            // Task-based Asynchronous Pattern (TAP) - Async/Await
+
+            //var cts = new CancellationTokenSource();
+            //PerformAsyncOperation(cts);
+            //Console.ReadLine();
+
+
+            // Enumerables
         }
 
         // Events
@@ -69,6 +82,71 @@ namespace CSharpAdvanced
         //private static void DownloadManager_DownloadCompleted()
         //{
         //    Console.WriteLine($"Download Completed Successfully");
+        //}
+
+
+        // MultiThreading
+
+        //private static object _lockObject = new();
+        //private static void Thread1()
+        //{
+        //    for (int i = 1; i <= 5; i++)
+        //    {
+        //        lock (_lockObject)
+        //        {
+        //            Console.ForegroundColor = ConsoleColor.Green;
+        //            Console.WriteLine($"Thread 1 - Count {i}");
+        //            Thread.Sleep(500);
+        //            Console.ForegroundColor = ConsoleColor.White;
+        //        }
+        //    }
+        //}
+
+        //private static void Thread2()
+        //{
+        //    for (int i = 6; i <= 10; i++)
+        //    {
+        //        lock (_lockObject)
+        //        {
+        //            Console.ForegroundColor = ConsoleColor.Red;
+        //            Console.WriteLine($"Thread 2 - Count {i}");
+        //            Thread.Sleep(500);
+        //        }
+        //    }
+        //}
+
+
+        // Task-based Asynchronous Pattern (TAP) - Async/Await
+
+        //private static async void PerformAsyncOperation(CancellationTokenSource cts)
+        //{
+        //    var operationTask = LongOperation(cts.Token);
+        //    //cts.Cancel();
+        //    try
+        //    {
+        //        Console.WriteLine("Starting async operation...");
+        //        Console.WriteLine($"Async task status: {operationTask.Status}");
+        //        await operationTask;
+        //        Console.WriteLine("Async operation completed.");
+        //        Console.WriteLine($"Async task status: {operationTask.Status}");
+        //    }
+        //    catch (OperationCanceledException)
+        //    {
+        //        Console.WriteLine("Async operation was canceled.");
+        //        Console.WriteLine($"Async task status: {operationTask.Status}");
+        //    }
+        //}
+
+        //private static async Task LongOperation(CancellationToken token)
+        //{
+        //    await Task.Delay(50);
+        //    for (int i = 1; i <= 5; i++)
+        //    {
+        //        token.ThrowIfCancellationRequested();
+
+        //        Console.WriteLine($"Thread 1 - Count {i}");
+        //        Thread.Sleep(500);
+        //    }
         //}
     }
 }
