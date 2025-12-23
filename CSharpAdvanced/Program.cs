@@ -71,25 +71,34 @@ namespace CSharpAdvanced
 
             // Enumerables
 
-            var books = new EnumerableBooks();
-            books.AddBookItem("The Great Gatsby", "F. Scott Fitzgerald", 10.99);
-            books.AddBookItem("To Kill a Mockingbird", "Harper Lee", 7.99);
-            books.AddBookItem("1984", "George Orwell", 8.99);
-            // Enumerator
-            foreach (var book in books)
-            {
-                Console.WriteLine($"{book.Title} by {book.Author} - ${book.Price}");
-            }
-            Console.WriteLine("\n");
-            // Indexer
-            for (int i = 0; i < books.Count(); i++)
-            {
-                Console.WriteLine($"{books[i].Title} by {books[i].Author} - ${books[i].Price}");
-            }
-            Console.WriteLine("\n");
+            //var books = new EnumerableBooks();
+            //books.AddBookItem("The Great Gatsby", "F. Scott Fitzgerald", 10.99);
+            //books.AddBookItem("To Kill a Mockingbird", "Harper Lee", 7.99);
+            //books.AddBookItem("1984", "George Orwell", 8.99);
+            //// Enumerator
+            //foreach (var book in books)
+            //{
+            //    Console.WriteLine($"{book.Title} by {book.Author} - ${book.Price}");
+            //}
+            //Console.WriteLine("\n");
+            //// Indexer
+            //for (int i = 0; i < books.Count(); i++)
+            //{
+            //    Console.WriteLine($"{books[i].Title} by {books[i].Author} - ${books[i].Price}");
+            //}
+            //Console.WriteLine("\n");
 
-            var myBook = books["The Great Gatsby"];
-            Console.WriteLine($"Indexer by Title: {myBook.Title} by {myBook.Author} - ${myBook.Price}");
+            //var myBook = books["The Great Gatsby"];
+            //Console.WriteLine($"Indexer by Title: {myBook.Title} by {myBook.Author} - ${myBook.Price}");
+
+
+            // Generics
+
+            var genCalc = new GenericCalculator<int>();
+            Console.WriteLine(genCalc.Add(10, 5));
+            Console.WriteLine(genCalc.Subtract(10, 5));
+            Console.WriteLine(genCalc.Multiply(10, 5));
+            Console.WriteLine(genCalc.Divide(10, 5));
         }
 
 
