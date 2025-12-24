@@ -94,11 +94,30 @@ namespace CSharpAdvanced
 
             // Generics
 
-            var genCalc = new GenericCalculator<int>();
-            Console.WriteLine(genCalc.Add(10, 5));
-            Console.WriteLine(genCalc.Subtract(10, 5));
-            Console.WriteLine(genCalc.Multiply(10, 5));
-            Console.WriteLine(genCalc.Divide(10, 5));
+            //var genCalc = new GenericCalculator<int>();
+            //Console.WriteLine(genCalc.Add(10, 5));
+            //Console.WriteLine(genCalc.Subtract(10, 5));
+            //Console.WriteLine(genCalc.Multiply(10, 5));
+            //Console.WriteLine(genCalc.Divide(10, 5));
+
+
+            // Operator Overloading
+
+            //Point p1 = new Point(10, 20);
+            //Point p2 = new Point(40, 80);
+            //// Arithmetic Operators
+            //Point p3 = p1 + p2;
+            //Console.WriteLine($"p1 + p2 = ({p3.XCoord}, {p3.YCoord})");
+            //p3 = p2 - p1;
+            //Console.WriteLine($"p2 - p1 = ({p3.XCoord}, {p3.YCoord})");
+            //// Comparison Operators
+            //Console.WriteLine($"p1 == p2 ? {p1 == p2}");
+            //Console.WriteLine($"p1 != p2 ? {p1 != p2}");
+            //// Conversion Operators
+            //Point p4 = (15, 25); // Implicit conversion from (double, double) to Point
+            //Console.WriteLine($"p4.XCoord = {p4.XCoord}, p4.YCoord = {p4.YCoord}");
+            //(double, double) coords = p4; // Implicit conversion from Point to (double, double)
+            //Console.WriteLine($"xCoord = {coords.Item1}, yCoord = {coords.Item2}");
         }
 
 
