@@ -109,15 +109,46 @@ namespace CSharpAdvanced
             //Point p3 = p1 + p2;
             //Console.WriteLine($"p1 + p2 = ({p3.XCoord}, {p3.YCoord})");
             //p3 = p2 - p1;
-            //Console.WriteLine($"p2 - p1 = ({p3.XCoord}, {p3.YCoord})");
+            //Console.WriteLine($"p2 - p1 = ({p3.XCoord}, {p3.YCoord})\n");
             //// Comparison Operators
             //Console.WriteLine($"p1 == p2 ? {p1 == p2}");
-            //Console.WriteLine($"p1 != p2 ? {p1 != p2}");
+            //Console.WriteLine($"p1 != p2 ? {p1 != p2}\n");
             //// Conversion Operators
             //Point p4 = (15, 25); // Implicit conversion from (double, double) to Point
             //Console.WriteLine($"p4.XCoord = {p4.XCoord}, p4.YCoord = {p4.YCoord}");
             //(double, double) coords = p4; // Implicit conversion from Point to (double, double)
-            //Console.WriteLine($"xCoord = {coords.Item1}, yCoord = {coords.Item2}");
+            //Console.WriteLine($"xCoord = {coords.Item1}, yCoord = {coords.Item2}\n");
+
+
+            // Object Method Overrides
+
+            //Point p5 = new Point(10, 20);
+            //Point p6 = new Point(10, 20);
+            //// Equals Override
+            //Console.WriteLine($"p2.Equals(p1) ? {p5.Equals(p6)}\n");
+            //// ToString Override
+            //Console.WriteLine($"Point p5: {p5}\n");
+            //// GetHashCode Override
+            //Console.WriteLine($"Point p5 HashCode: {p5.GetHashCode()}");
+            //Console.WriteLine($"Point p6 HashCode: {p6.GetHashCode()}");
+
+
+            // Records
+
+            ////var person1 = new PersonRecord { FirstName = "John", LastName = "Doe" };    // Standard record initialization
+            //var person1 = new PersonRecord("John", "Doe");    // Positional record initialization
+            //var person2 = new PersonRecord("John", "Doe");
+            //// Records Already Overrides Equals, GetHashCode, and ToString methods by default
+            //Console.WriteLine($"person2.Equals(person1) ? {person2.Equals(person1)}\n");
+            //Console.WriteLine($"person1: {person1}\n");
+            //Console.WriteLine($"person1 HashCode: {person1.GetHashCode()}");
+            //Console.WriteLine($"person2 HashCode: {person2.GetHashCode()}\n");
+            //// Deconstruction of Positional Records
+            //var (firstName, lastName) = person1;
+            //Console.WriteLine($"First Name: {firstName}, Last Name: {lastName}\n");
+            //// Copy and Modify with 'with' Expression
+            //var person3 = person1 with { FirstName = "Simon" };
+            //Console.WriteLine($"person3: {person3}");
         }
 
 
@@ -196,6 +227,20 @@ namespace CSharpAdvanced
         //        Console.WriteLine($"Thread 1 - Count {i}");
         //        Thread.Sleep(500);
         //    }
+        //}
+
+
+        // Records
+
+        // Avoid using complex types like classes or arrays as properties in records
+        // to maintain immutability ( = avoid shallow immutability) and value-based equality.
+
+        //public record PersonRecord(string FirstName, string LastName);  // Positional record
+
+        //public record PersonRecord  // Standard record
+        //{
+        //    public string FirstName { get; set; }
+        //    public string LastName { get; set; }
         //}
     }
 }

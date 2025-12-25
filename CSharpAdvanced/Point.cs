@@ -48,5 +48,34 @@ namespace CSharpAdvanced
         {
             return (p.XCoord, p.YCoord);
         }
+
+        // Equals Override
+        public override bool Equals(object? obj)
+        {
+            if (obj is Point p)
+            {
+                return this == p;
+            }
+            return false;
+        }
+
+        // Equals Override
+        public override string ToString()
+        {
+            return $"XCoord = {this.XCoord}, YCoord = {this.YCoord}";
+        }
+
+        // GetHashCode Override
+        public override int GetHashCode()
+        {
+            // Manual calculation for custom hash code
+            //var hashCode = 17;
+            //hashCode = hashCode * 23 + XCoord.GetHashCode();
+            //hashCode = hashCode * 23 + YCoord.GetHashCode();
+            //return hashCode;
+
+            // Or built-in method for automatic hash code generation
+            return HashCode.Combine(this.XCoord, this.YCoord);
+        }
     }
 }
