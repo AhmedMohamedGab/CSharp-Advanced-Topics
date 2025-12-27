@@ -59,7 +59,7 @@ namespace CSharpAdvanced
             return false;
         }
 
-        // Equals Override
+        // ToString Override
         public override string ToString()
         {
             return $"XCoord = {this.XCoord}, YCoord = {this.YCoord}";

@@ -19,6 +19,7 @@ namespace CSharpAdvanced
             //string mySentence = Console.ReadLine() ?? "";
             //Console.WriteLine(mySentence.CapitalizeAllWords());
 
+            // ----------------------------------------------
 
             // Recursion
 
@@ -33,6 +34,7 @@ namespace CSharpAdvanced
             //Console.Write("\nSorted Array:");
             //foreach (var item in sortedArray) Console.Write(" " + item);
 
+            // ----------------------------------------------
 
             // Delegates
 
@@ -45,6 +47,7 @@ namespace CSharpAdvanced
             //processor += dlgMthds.ReplaceSpacesWithHyphens;
             //processor(mySentence);
 
+            // ----------------------------------------------
 
             // Events
 
@@ -53,6 +56,7 @@ namespace CSharpAdvanced
             //downloadManager.DownloadCompleted += DownloadManager_DownloadCompleted;
             //downloadManager.StartDownload();
 
+            // ----------------------------------------------
 
             // MultiThreading
 
@@ -61,6 +65,7 @@ namespace CSharpAdvanced
             //thread1.Start();
             //thread2.Start();
 
+            // ----------------------------------------------
 
             // Task-based Asynchronous Pattern (TAP) - Async/Await
 
@@ -68,6 +73,7 @@ namespace CSharpAdvanced
             //PerformAsyncOperation(cts);
             //Console.ReadLine();
 
+            // ----------------------------------------------
 
             // Enumerables
 
@@ -91,6 +97,7 @@ namespace CSharpAdvanced
             //var myBook = books["The Great Gatsby"];
             //Console.WriteLine($"Indexer by Title: {myBook.Title} by {myBook.Author} - ${myBook.Price}");
 
+            // ----------------------------------------------
 
             // Generics
 
@@ -100,6 +107,7 @@ namespace CSharpAdvanced
             //Console.WriteLine(genCalc.Multiply(10, 5));
             //Console.WriteLine(genCalc.Divide(10, 5));
 
+            // ----------------------------------------------
 
             // Operator Overloading
 
@@ -119,6 +127,7 @@ namespace CSharpAdvanced
             //(double, double) coords = p4; // Implicit conversion from Point to (double, double)
             //Console.WriteLine($"xCoord = {coords.Item1}, yCoord = {coords.Item2}\n");
 
+            // ----------------------------------------------
 
             // Object Method Overrides
 
@@ -132,6 +141,7 @@ namespace CSharpAdvanced
             //Console.WriteLine($"Point p5 HashCode: {p5.GetHashCode()}");
             //Console.WriteLine($"Point p6 HashCode: {p6.GetHashCode()}");
 
+            // ----------------------------------------------
 
             // Records
 
@@ -151,6 +161,7 @@ namespace CSharpAdvanced
             //Console.WriteLine($"person3: {person3}");
         }
 
+        // ----------------------------------------------
 
         // Events
 
@@ -164,6 +175,7 @@ namespace CSharpAdvanced
         //    Console.WriteLine($"Download Completed Successfully");
         //}
 
+        // ----------------------------------------------
 
         // MultiThreading
 
@@ -195,6 +207,7 @@ namespace CSharpAdvanced
         //    }
         //}
 
+        // ----------------------------------------------
 
         // Task-based Asynchronous Pattern (TAP) - Async/Await
 
@@ -229,6 +242,7 @@ namespace CSharpAdvanced
         //    }
         //}
 
+        // ----------------------------------------------
 
         // Records
 
