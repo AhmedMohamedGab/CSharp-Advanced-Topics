@@ -92,28 +92,98 @@ namespace LINQ
 
             // Partitioning (Skip, SkipLast, SkipWhile, Take, TakeLast, TakeWhile, Chunk)
 
-            var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            //var result = numbers.Skip(3);
-            //var result = numbers.SkipLast(3);
-            //var result = numbers.SkipWhile(n => n <= 3);
-            //var result = numbers.Take(3);
-            //var result = numbers.TakeLast(3);
-            //var result = numbers.TakeWhile(n => n <= 3);
+            //var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            ////var result = numbers.Skip(3);
+            ////var result = numbers.SkipLast(3);
+            ////var result = numbers.SkipWhile(n => n <= 3);
+            ////var result = numbers.Take(3);
+            ////var result = numbers.TakeLast(3);
+            ////var result = numbers.TakeWhile(n => n <= 3);
+
+            ////foreach (var number in result)
+            ////{
+            ////    Console.WriteLine(number);
+            ////}
+
+            //var chunks = numbers.Chunk(3);
+            //foreach (var chunk in chunks)
+            //{
+            //    foreach (var number in chunk)
+            //    {
+            //        Console.WriteLine(number);
+            //    }
+            //    Console.WriteLine("----------");
+            //}
+
+            // ----------------------------------------------
+
+            // Set Operations (Distinct, DistinctBy, Except, ExceptBy, Intersect, IntersectBy, Union, UnionBy)
+
+            //var numbers = new List<int> { 1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //var anotherNumbers = new List<int> { -1, 0, 1, 2, 3, 4, 5, 6, 7 };
+
+            ////var result = numbers.Distinct();
+            ////var result = numbers.Except(anotherNumbers);
+            ////var result = numbers.Intersect(anotherNumbers);
+            //var result = numbers.Union(anotherNumbers).OrderBy(n => n);
 
             //foreach (var number in result)
             //{
             //    Console.WriteLine(number);
             //}
 
-            var chunks = numbers.Chunk(3);
-            foreach (var chunk in chunks)
-            {
-                foreach (var number in chunk)
-                {
-                    Console.WriteLine(number);
-                }
-                Console.WriteLine("----------");
-            }
+            // -----------------------
+
+            //var people = new List<Person>
+            //{
+            //    new Person { Name = "Alice", Age = 30, Job = "Teacher" },
+            //    new Person { Name = "Bob", Age = 25, Job = "Engineer" },
+            //    new Person { Name = "Charlie", Age = 20, Job = "Doctor" },
+            //    new Person { Name = "David", Age = 35, Job = "Doctor" },
+            //    new Person { Name = "Kelly", Age = 37, Job = "Teacher" },
+            //    new Person { Name = "John", Age = 37, Job = "Dentist" }
+            //};
+            //var anotherPeople = new List<Person>
+            //{
+            //    new Person { Name = "Jack", Age = 41, Job = "Lawyer" },
+            //    new Person { Name = "Barns", Age = 25, Job = "Officer" },
+            //    new Person { Name = "Kelly", Age = 27, Job = "Teacher" },
+            //    new Person { Name = "Alice", Age = 35, Job = "Doctor" },
+            //    new Person { Name = "John", Age = 32, Job = "Security" }
+            //};
+
+            //var resultOfDistinctBy = people.DistinctBy(p => p.Job);
+            //foreach (var person in resultOfDistinctBy)
+            //{
+            //    Console.WriteLine($"Job: {person.Job}");
+            //}
+            //Console.WriteLine("-----------------");
+
+            //var resultOfExceptBy = people.ExceptBy(anotherPeople.Select(p => p.Name), p => p.Name);
+            //foreach (var person in resultOfExceptBy)
+            //{
+            //    Console.WriteLine($"Name: {person.Name}");
+            //}
+            //Console.WriteLine("-----------------");
+
+            //var resultOfIntersectBy = people.IntersectBy(anotherPeople.Select(p => p.Name), p => p.Name);
+            //foreach (var person in resultOfIntersectBy)
+            //{
+            //    Console.WriteLine($"Name: {person.Name}");
+            //}
+            //Console.WriteLine("-----------------");
+
+            //var resultOfUnionBy = people.UnionBy(anotherPeople, p => p.Job);
+            //foreach (var person in resultOfUnionBy)
+            //{
+            //    Console.WriteLine($"Job: {person.Job}");
+            //}
+
+            // ----------------------------------------------
+
+            // Joins (Join, GroupJoin)
+
+
         }
     }
 
@@ -121,5 +191,6 @@ namespace LINQ
     {
         public string Name { get; set; }
         public int Age { get; set; }
+        public string Job { get; set; }
     }
 }
