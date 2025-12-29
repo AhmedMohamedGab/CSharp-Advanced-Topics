@@ -9,6 +9,7 @@ namespace LINQ
         {
             // LINQ - Language Integrated Query
 
+            // Table of Contents:
             // Projection and Filtering (Select, Where, OfType)
             // Sorting (OrderBy, OrderByDescending, ThenBy, ThenByDescending, Reverse)
             // Quantifiers (Any, All, Contains)
@@ -52,25 +53,40 @@ namespace LINQ
             // ----------------------------------------------
 
             // Sorting (OrderBy, OrderByDescending, ThenBy, ThenByDescending, Reverse)
-            var people = new List<Person>
-            {
-                new Person { Name = "Alice", Age = 30 },
-                new Person { Name = "Bob", Age = 25 },
-                new Person { Name = "Bob", Age = 20 },
-                new Person { Name = "Charlie", Age = 30 },
-                new Person { Name = "David", Age = 35 }
-            };
-            var sortedPeople = people
-                .OrderBy(p => p.Name)               // Primary sort by Name (ascending)
-                .ThenByDescending(p => p.Age)       // Secondary sort by Age (descending)
-                .Reverse();                         // Reverse the entire sorted sequence
-            //sortedPeople = from person in people
-            //               orderby person.Name, person.Age descending
-            //               select person;
-            foreach (var person in sortedPeople)
-            {
-                Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
-            }
+
+            //var people = new List<Person>
+            //{
+            //    new Person { Name = "Alice", Age = 30 },
+            //    new Person { Name = "Bob", Age = 25 },
+            //    new Person { Name = "Bob", Age = 20 },
+            //    new Person { Name = "Charlie", Age = 30 },
+            //    new Person { Name = "David", Age = 35 }
+            //};
+
+            //var sortedPeople = people
+            //    .OrderBy(p => p.Name)               // Primary sort by Name (ascending)
+            //    .ThenByDescending(p => p.Age)       // Secondary sort by Age (descending)
+            //    .Reverse();                         // Reverse the entire sorted sequence
+            ////sortedPeople = from person in people
+            ////               orderby person.Name, person.Age descending
+            ////               select person;
+
+            //foreach (var person in sortedPeople)
+            //{
+            //    Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+            //}
+
+            // ----------------------------------------------
+
+            // Quantifiers (Any, All, Contains)
+
+            var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var resultOfAll = numbers.All(n => n > 5); // True if all numbers are greater than 5
+            var resultOfAny = numbers.Any(n => n > 5); // True if any number is greater than 5
+            var resultOfContains = numbers.Contains(5); // True if any number equals 5
+            Console.WriteLine($"All > 5 ? {resultOfAll}");
+            Console.WriteLine($"Any > 5 ? {resultOfAny}");
+            Console.WriteLine($"Contains 5 ? {resultOfContains}");
         }
     }
 

@@ -9,6 +9,21 @@ namespace CSharpAdvanced
     {
         static void Main(string[] args)
         {
+            // C# Advanced Topics Table of Contents:
+            // Extension Methods
+            // Recursion
+            // Delegates
+            // Events
+            // MultiThreading
+            // Task-based Asynchronous Pattern (TAP) - Async/Await
+            // Enumerables
+            // Generics
+            // Operator Overloading
+            // Object Method Overrides
+            // Records
+
+            // ----------------------------------------------
+
             // Extension Methods
 
             //Console.Write("Enter a string to reverse: ");
