@@ -13,7 +13,7 @@ namespace LINQ
             // Projection and Filtering (Select, Where, OfType)
             // Sorting (OrderBy, OrderByDescending, ThenBy, ThenByDescending, Reverse)
             // Quantifiers (Any, All, Contains)
-            // Partitionaing (Skip, SkipWhile, Take, TakeWhile, Chunk)
+            // Partitioning (Skip, SkipLast, SkipWhile, Take, TakeLast, TakeWhile, Chunk)
             // Set Operations (Distinct, DistinctBy, Except, ExceptBy, Intersect, IntersectBy, Union, UnionBy)
             // Joins (Join, GroupJoin)
             // Grouping (GroupBy, ToLookup)
@@ -80,13 +80,40 @@ namespace LINQ
 
             // Quantifiers (Any, All, Contains)
 
+            //var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //var resultOfAll = numbers.All(n => n > 5); // True if all numbers are greater than 5
+            //var resultOfAny = numbers.Any(n => n > 5); // True if any number is greater than 5
+            //var resultOfContains = numbers.Contains(5); // True if any number equals 5
+            //Console.WriteLine($"All > 5 ? {resultOfAll}");
+            //Console.WriteLine($"Any > 5 ? {resultOfAny}");
+            //Console.WriteLine($"Contains 5 ? {resultOfContains}");
+
+            // ----------------------------------------------
+
+            // Partitioning (Skip, SkipLast, SkipWhile, Take, TakeLast, TakeWhile, Chunk)
+
             var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            var resultOfAll = numbers.All(n => n > 5); // True if all numbers are greater than 5
-            var resultOfAny = numbers.Any(n => n > 5); // True if any number is greater than 5
-            var resultOfContains = numbers.Contains(5); // True if any number equals 5
-            Console.WriteLine($"All > 5 ? {resultOfAll}");
-            Console.WriteLine($"Any > 5 ? {resultOfAny}");
-            Console.WriteLine($"Contains 5 ? {resultOfContains}");
+            //var result = numbers.Skip(3);
+            //var result = numbers.SkipLast(3);
+            //var result = numbers.SkipWhile(n => n <= 3);
+            //var result = numbers.Take(3);
+            //var result = numbers.TakeLast(3);
+            //var result = numbers.TakeWhile(n => n <= 3);
+
+            //foreach (var number in result)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            var chunks = numbers.Chunk(3);
+            foreach (var chunk in chunks)
+            {
+                foreach (var number in chunk)
+                {
+                    Console.WriteLine(number);
+                }
+                Console.WriteLine("----------");
+            }
         }
     }
 
