@@ -183,7 +183,36 @@ namespace LINQ
 
             // Joins (Join, GroupJoin)
 
+            var employees = new List<Employee>
+            {
+                new Employee { Name = "Alice", DepartmentId = 1 },
+                new Employee { Name = "Bob", DepartmentId = 2 },
+                new Employee { Name = "Charlie", DepartmentId = 1 },
+                new Employee { Name = "David", DepartmentId = 3 },
+                new Employee { Name = "John", DepartmentId = 4 }
+            };
+            var departments = new List<Department>
+            {
+                new Department { Id = 1, Title = "HR" },
+                new Department { Id = 2, Title = "IT" },
+                new Department { Id = 3, Title = "Finance" },
+                new Department { Id = 4, Title = "Development" }
+            };
 
+            var joinedData = employees.Join(
+                departments,
+                emp => emp.DepartmentId,
+                dept => dept.Id,
+                (emp, dept) => new
+                {
+                    emp.Name,
+                    dept.Title
+                });
+
+            foreach (var item in joinedData)
+            {
+                Console.WriteLine($"Employee: {item.Name}, Department: {item.Title}");
+            }
         }
     }
 
@@ -192,5 +221,17 @@ namespace LINQ
         public string Name { get; set; }
         public int Age { get; set; }
         public string Job { get; set; }
+    }
+
+    public class Employee
+    {
+        public string Name { get; set; }
+        public int DepartmentId { get; set; }
+    }
+
+    public class Department
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
     }
 }
