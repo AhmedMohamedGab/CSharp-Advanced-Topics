@@ -15,7 +15,7 @@ namespace LINQ
             // Quantifiers (Any, All, Contains)
             // Partitioning (Skip, SkipLast, SkipWhile, Take, TakeLast, TakeWhile, Chunk)
             // Set Operations (Distinct, DistinctBy, Except, ExceptBy, Intersect, IntersectBy, Union, UnionBy)
-            // Joins (Join, GroupJoin)
+            // Joins (Join, LeftJoin, RightJoin, GroupJoin)
             // Grouping (GroupBy, ToLookup)
 
             // ----------------------------------------------
@@ -181,38 +181,92 @@ namespace LINQ
 
             // ----------------------------------------------
 
-            // Joins (Join, GroupJoin)
+            // Joins (Join, LeftJoin, RightJoin, GroupJoin)
 
-            var employees = new List<Employee>
-            {
-                new Employee { Name = "Alice", DepartmentId = 1 },
-                new Employee { Name = "Bob", DepartmentId = 2 },
-                new Employee { Name = "Charlie", DepartmentId = 1 },
-                new Employee { Name = "David", DepartmentId = 3 },
-                new Employee { Name = "John", DepartmentId = 4 }
-            };
-            var departments = new List<Department>
-            {
-                new Department { Id = 1, Title = "HR" },
-                new Department { Id = 2, Title = "IT" },
-                new Department { Id = 3, Title = "Finance" },
-                new Department { Id = 4, Title = "Development" }
-            };
+            //var employees = new List<Employee>
+            //{
+            //    new Employee { Name = "Alice", DepartmentId = 1 },
+            //    new Employee { Name = "Bob", DepartmentId = 2 },
+            //    new Employee { Name = "Charlie", DepartmentId = 1 },
+            //    new Employee { Name = "David", DepartmentId = 3 },
+            //    new Employee { Name = "John", DepartmentId = 0 }
+            //};
+            //var departments = new List<Department>
+            //{
+            //    new Department { Id = 1, Title = "HR" },
+            //    new Department { Id = 2, Title = "IT" },
+            //    new Department { Id = 3, Title = "Finance" },
+            //    new Department { Id = 4, Title = "Development" }
+            //};
 
-            var joinedData = employees.Join(
-                departments,
-                emp => emp.DepartmentId,
-                dept => dept.Id,
-                (emp, dept) => new
-                {
-                    emp.Name,
-                    dept.Title
-                });
+            //var innerJoinedData = employees.Join(
+            //    departments,
+            //    emp => emp.DepartmentId,
+            //    dept => dept.Id,
+            //    (emp, dept) => new { EmployeeName = emp.Name, DepartmentTitle = dept.Title });
 
-            foreach (var item in joinedData)
-            {
-                Console.WriteLine($"Employee: {item.Name}, Department: {item.Title}");
-            }
+            //foreach (var item in innerJoinedData)
+            //{
+            //    Console.WriteLine($"Employee: {item.EmployeeName}, Department: {item.DepartmentTitle}");
+            //}
+            //Console.WriteLine("-----------------");
+
+            //var leftJoinedData = employees.LeftJoin(
+            //    departments,
+            //    emp => emp.DepartmentId,
+            //    dept => dept.Id,
+            //    (emp, dept) => new
+            //    {
+            //        EmployeeName = emp.Name,
+            //        DepartmentTitle = dept == null ? "No Departments" : dept.Title
+            //    });
+
+            //foreach (var item in leftJoinedData)
+            //{
+            //    Console.WriteLine($"Employee: {item.EmployeeName}, Department: {item.DepartmentTitle}");
+            //}
+            //Console.WriteLine("-----------------");
+
+            //var rightJoinedData = employees.RightJoin(
+            //    departments,
+            //    emp => emp.DepartmentId,
+            //    dept => dept.Id,
+            //    (emp, dept) => new
+            //    {
+            //        EmployeeName = emp == null ? "No Employees" : emp.Name,
+            //        DepartmentTitle = dept.Title
+            //    });
+
+            //foreach (var item in rightJoinedData)
+            //{
+            //    Console.WriteLine($"Employee: {item.EmployeeName}, Department: {item.DepartmentTitle}");
+            //}
+            //Console.WriteLine("-----------------");
+
+            //var groupJoinedData = departments.GroupJoin(
+            //    employees,
+            //    dept => dept.Id,
+            //    emp => emp.DepartmentId,
+            //    (dept, emps) => new
+            //    {
+            //        DepartmentTitle = dept.Title,
+            //        Employees = emps.Select(e => e.Name)
+            //    });
+
+            //foreach (var item in groupJoinedData)
+            //{
+            //    Console.WriteLine($"Department: {item.DepartmentTitle}");
+            //    foreach (var empName in item.Employees)
+            //    {
+            //        Console.WriteLine($" - Employee: {empName}");
+            //    }
+            //}
+
+            // ----------------------------------------------
+
+            // Grouping (GroupBy, ToLookup)
+
+
         }
     }
 
