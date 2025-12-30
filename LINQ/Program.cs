@@ -266,7 +266,60 @@ namespace LINQ
 
             // Grouping (GroupBy, ToLookup)
 
+            //var employees = new List<Employee>
+            //{
+            //    new Employee { Name = "Alice", DepartmentId = 1 },
+            //    new Employee { Name = "Bob", DepartmentId = 2 },
+            //    new Employee { Name = "Charlie", DepartmentId = 1 },
+            //    new Employee { Name = "David", DepartmentId = 3 },
+            //    new Employee { Name = "John", DepartmentId = 0 }
+            //};
+            //var departments = new List<Department>
+            //{
+            //    new Department { Id = 1, Title = "HR" },
+            //    new Department { Id = 2, Title = "IT" },
+            //    new Department { Id = 3, Title = "Finance" },
+            //    new Department { Id = 4, Title = "Development" }
+            //};
 
+            //var groupedData = employees.Join(
+            //    departments,
+            //    e => e.DepartmentId,
+            //    d => d.Id,
+            //    (e, d) => new
+            //    {
+            //        EmployeeName = e.Name,
+            //        DepartmentTitle = d.Title
+            //    }).GroupBy(item => item.DepartmentTitle);
+
+            //foreach (var group in groupedData)
+            //{
+            //    Console.WriteLine($"Department: {group.Key}");
+            //    foreach (var item in group)
+            //    {
+            //        Console.WriteLine($" - Employee: {item.EmployeeName}");
+            //    }
+            //}
+            //Console.WriteLine("-----------------");
+
+            //var lookupData = employees.Join(
+            //    departments,
+            //    e => e.DepartmentId,
+            //    d => d.Id,
+            //    (e, d) => new
+            //    {
+            //        EmployeeName = e.Name,
+            //        DepartmentTitle = d.Title
+            //    }).ToLookup(item => item.DepartmentTitle);
+
+            //foreach (var group in lookupData)
+            //{
+            //    Console.WriteLine($"Department: {group.Key}");
+            //    foreach (var item in group)
+            //    {
+            //        Console.WriteLine($" - Employee: {item.EmployeeName}");
+            //    }
+            //}
         }
     }
 
