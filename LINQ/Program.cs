@@ -10,7 +10,7 @@ namespace LINQ
             // LINQ - Language Integrated Query
 
             // Table of Contents:
-            // Projection and Filtering (Select, Where, OfType)
+            // Projection and Filtering (Select, Where, OfType, SelectMany, Zip)
             // Sorting (OrderBy, OrderByDescending, ThenBy, ThenByDescending, Reverse)
             // Quantifiers (Any, All, Contains)
             // Partitioning (Skip, SkipLast, SkipWhile, Take, TakeLast, TakeWhile, Chunk)
@@ -20,8 +20,9 @@ namespace LINQ
 
             // ----------------------------------------------
 
-            // Projection and Filtering (Select, Where, OfType)
+            // Projection and Filtering (Select, Where, OfType, SelectMany, Zip)
 
+            //// Select, Where
             //var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             ////var result = from number in numbers where number > 5 select number; // LINQ Query Syntax
             //var result = numbers.Where(n => n > 5); // LINQ Method Syntax (Preferred)
@@ -31,12 +32,15 @@ namespace LINQ
             //{
             //    Console.WriteLine(number);
             //}
+            //Console.WriteLine("----------");
             //numbers.AddRange(new int[] { 11, 12, 13, 14, 15 }); // Modifying the source collection
             //foreach (var number in result)  // Query Execution again reflects the changes in the source collection
             //{
             //    Console.WriteLine(number);
             //}
             //// In order to execute the query immediately and store the result, use ToList() or ToArray()
+
+            // -----------------------
 
             //// Example of OfType
             //ArrayList arrayList = new ArrayList();
@@ -48,6 +52,32 @@ namespace LINQ
             //foreach (var item in intResults)
             //{
             //    Console.WriteLine(item);
+            //}
+
+            // -----------------------
+
+            //// Example of SelectMany
+            //var employees = new List<Employee>
+            //{
+            //    new Employee { Name = "Alice", Skills = new List<string> { "C#", "SQL", "Azure" } },
+            //    new Employee { Name = "Bob", Skills = new List<string> { "Java", "AWS" } },
+            //    new Employee { Name = "Charlie", Skills = new List<string> { "Python", "Django", "Docker" } }
+            //};
+            //var allSkills = employees.SelectMany(e => e.Skills); // Flattens the list of skills from all employees
+            //foreach (var skill in allSkills)
+            //{
+            //    Console.WriteLine(skill);
+            //}
+
+            // -----------------------
+
+            //// Example of Zip
+            //var colorNames = new List<string> { "Red", "Green", "Blue" };
+            //var hexCodes = new List<string> { "FF0000", "00FF00", "0000FF" };
+            //var colorHexPairs = colorNames.Zip(hexCodes, (name, hex) => new { Name = name, Hex = hex });
+            //foreach (var pair in colorHexPairs)
+            //{
+            //    Console.WriteLine($"Color: {pair.Name}, Hex: {pair.Hex}");
             //}
 
             // ----------------------------------------------
@@ -334,6 +364,7 @@ namespace LINQ
     {
         public string Name { get; set; }
         public int DepartmentId { get; set; }
+        public List<string> Skills { get; set; } = new();
     }
 
     public class Department
