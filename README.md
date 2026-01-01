@@ -19,7 +19,7 @@ Here's most of the advanced topics in C# with simple code examples in ONE soluti
 11. Records
 
 - **LINQ - Language Integrated Query**:
-1. Projection and Filtering (Select, Where, OfType)
+1. Projection and Filtering (Select, Where, OfType, SelectMany, Zip)
 2. Sorting (OrderBy, OrderByDescending, ThenBy, ThenByDescending, Reverse)
 3. Quantifiers (Any, All, Contains)
 4. Partitioning (Skip, SkipLast, SkipWhile, Take, TakeLast, TakeWhile, Chunk)
