@@ -17,6 +17,7 @@ namespace LINQ
             // Set Operations (Distinct, DistinctBy, Except, ExceptBy, Intersect, IntersectBy, Union, UnionBy)
             // Joins (Join, LeftJoin, RightJoin, GroupJoin)
             // Grouping (GroupBy, ToLookup)
+            // Generating Sequences (Range, Repeat, Empty, DefaultIfEmpty)
 
             // ----------------------------------------------
 
@@ -350,6 +351,45 @@ namespace LINQ
             //        Console.WriteLine($" - Employee: {item.EmployeeName}");
             //    }
             //}
+
+            // ----------------------------------------------
+
+            // Generating Sequences (Range, Repeat, Empty, DefaultIfEmpty)
+
+            //var rangeNumbers = Enumerable.Range(1, 10); // Generates numbers from 1 to 10
+            //Console.WriteLine("Range:");
+            //foreach (var number in rangeNumbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
+            //Console.WriteLine("-----------------");
+
+            //var repeatValues = Enumerable.Repeat("Hello", 5); // Repeats "Hello" 5 times
+            //Console.WriteLine("Repeat:");
+            //foreach (var value in repeatValues)
+            //{
+            //    Console.WriteLine(value);
+            //}
+            //Console.WriteLine("-----------------");
+
+            //var emptySequence = Enumerable.Empty<int>(); // Generates an empty sequence of integers
+            //Console.WriteLine("Empty:");
+            //foreach (var number in emptySequence)
+            //{
+            //    Console.WriteLine(number); // No output
+            //}
+            //Console.WriteLine("-----------------");
+
+            //var numbers = new List<int> { 1, 2, 3 };
+            ////var numbers = new List<int> { };
+            //var defaultIfEmptySequence = numbers.DefaultIfEmpty(0); // If numbers is empty, returns a sequence with a single element 0
+            //Console.WriteLine("DefaultIfEmpty:");
+            //foreach (var number in defaultIfEmptySequence)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            // ----------------------------------------------
         }
     }
 
