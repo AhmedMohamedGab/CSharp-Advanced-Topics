@@ -18,6 +18,7 @@ namespace LINQ
             // Joins (Join, LeftJoin, RightJoin, GroupJoin)
             // Grouping (GroupBy, ToLookup)
             // Generating Sequences (Range, Repeat, Empty, DefaultIfEmpty)
+            // Element Operations (ElementAt, ElementAtOrDefault, First, FirstOrDefault, Last, LastOrDefault, Single, SingleOrDefault)
 
             // ----------------------------------------------
 
@@ -388,6 +389,41 @@ namespace LINQ
             //{
             //    Console.WriteLine(number);
             //}
+
+            // ----------------------------------------------
+
+            // Element Operations (ElementAt, ElementAtOrDefault, First, FirstOrDefault, Last, LastOrDefault, Single, SingleOrDefault)
+
+            //var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 7 };
+
+            //var elementAt2 = numbers.ElementAt(2); // 3
+            ////var elementAt10 = numbers.ElementAt(10); // argument out of range exception
+            //var elementAtOrDefault10 = numbers.ElementAtOrDefault(10); // 0 (default for int)
+            //Console.WriteLine($"element at 2: {elementAt2}");
+            //Console.WriteLine($"element at 10 or default: {elementAtOrDefault10}");
+            //Console.WriteLine("-----------------");
+
+            //var firstElementGreaterThan2 = numbers.First(e => e > 2); // 3
+            ////var firstElementGreaterThan10 = numbers.First(e => e > 10); // invalid operation exception
+            //var firstElementGreaterThanOrDefault10 = numbers.FirstOrDefault(e => e > 10); // 0 (default for int)
+            //Console.WriteLine($"first element greater than 2: {firstElementGreaterThan2}");
+            //Console.WriteLine($"first element greater than 10 or default: {firstElementGreaterThanOrDefault10}");
+            //Console.WriteLine("-----------------");
+
+            //var lastElementLessThan6 = numbers.Last(e => e < 6); // 5
+            ////var lastElementLessThanZero = numbers.Last(e => e < 0); // invalid operation exception
+            //var lastElementLessThanOrDefaultZero = numbers.LastOrDefault(e => e < 0); // 0 (default for int)
+            //Console.WriteLine($"last element less than 6: {lastElementLessThan6}");
+            //Console.WriteLine($"last element less than 0 or default: {lastElementLessThanOrDefaultZero}");
+            //Console.WriteLine("-----------------");
+
+            //var singleElementEquals4 = numbers.Single(e => e == 4); // 4
+            ////var singleElementEquals7 = numbers.Single(e => e == 7); // invalid operation exception
+            ////var singleElementOrDefaultEquals7 = numbers.SingleOrDefault(e => e == 7); // invalid operation exception
+            ////var singleElementEquals10 = numbers.Single(e => e == 10); // invalid operation exception
+            //var singleElementOrDefaultEquals10 = numbers.SingleOrDefault(e => e == 10); // 0 (default for int)
+            //Console.WriteLine($"single element equals 4: {singleElementEquals4}");
+            //Console.WriteLine($"single element equals 10 or default: {singleElementOrDefaultEquals10}");
 
             // ----------------------------------------------
         }
