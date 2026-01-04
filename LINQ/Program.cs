@@ -20,6 +20,7 @@ namespace LINQ
             // Generating Sequences (Range, Repeat, Empty, DefaultIfEmpty)
             // Element Operations (ElementAt, ElementAtOrDefault, First, FirstOrDefault, Last, LastOrDefault, Single, SingleOrDefault)
             // Sequence Equality (SequenceEqual)
+            // Concatenation (Concat)
 
             // ----------------------------------------------
 
@@ -66,7 +67,8 @@ namespace LINQ
             //    new Employee { Name = "Bob", Skills = new List<string> { "Java", "AWS" } },
             //    new Employee { Name = "Charlie", Skills = new List<string> { "Python", "Django", "Docker" } }
             //};
-            //var allSkills = employees.SelectMany(e => e.Skills); // Flattens the list of skills from all employees
+            //var allSkills = employees.SelectMany(e => e.Skills);
+            //// SelectMany flattens the list of skills from all employees (works like the expand operator in JavaScript)
             //foreach (var skill in allSkills)
             //{
             //    Console.WriteLine(skill);
@@ -458,6 +460,33 @@ namespace LINQ
             //Console.WriteLine($"sequence 5 equals sequence 6 ? {sequence5.SequenceEqual(sequence6)}");
             //// False because both have different references even though the values are the same. To make it true,
             //// we have overridden the Equals method in the Department class to compare values instead of references.
+
+            // ----------------------------------------------
+
+            // Concatenation (Concat)
+
+            //var person1 = new Person { Name = "Alice", Age = 30, Job = "Teacher" };
+            //var person2 = new Person { Name = "Bob", Age = 25, Job = "Engineer" };
+            //var person3 = new Person { Name = "Charlie", Age = 20, Job = "Doctor" };
+            //var person4 = new Person { Name = "David", Age = 35, Job = "Doctor" };
+
+            //var firstSequence = new List<Person> { person1, person2 };
+            //var secondSequence = new List<Person> { person3, person4 };
+
+            //var concatenatedSequence = firstSequence.Concat(secondSequence);
+            //foreach (var person in concatenatedSequence)
+            //{
+            //    Console.WriteLine(person.Name);
+            //}
+            //Console.WriteLine("-----------------");
+
+            ////var concatenatedSequence2 = new[] { firstSequence, secondSequence };    // Array of sequences (IEnumerable<IEnumerable<Person>>)
+            //var concatenatedSequence2 = new[] { firstSequence, secondSequence }.SelectMany(s => s);
+            //// SelectMany flattens the inner sequences (works like the expand operator in JavaScript)
+            //foreach (var person in concatenatedSequence2)
+            //{
+            //    Console.WriteLine(person.Name);
+            //}
 
             // ----------------------------------------------
         }
