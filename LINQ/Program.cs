@@ -19,6 +19,7 @@ namespace LINQ
             // Grouping (GroupBy, ToLookup)
             // Generating Sequences (Range, Repeat, Empty, DefaultIfEmpty)
             // Element Operations (ElementAt, ElementAtOrDefault, First, FirstOrDefault, Last, LastOrDefault, Single, SingleOrDefault)
+            // Sequence Equality (SequenceEqual)
 
             // ----------------------------------------------
 
@@ -426,6 +427,39 @@ namespace LINQ
             //Console.WriteLine($"single element equals 10 or default: {singleElementOrDefaultEquals10}");
 
             // ----------------------------------------------
+
+            // Sequence Equality (SequenceEqual)
+
+            //var department1 = new Department { Id = 1, Title = "HR" };
+            //var department2 = new Department { Id = 2, Title = "IT" };
+            //var department3 = new Department { Id = 3, Title = "Finance" };
+
+            //var sequence0 = new List<Department> { department1, department2, department3 };
+            //var sequence1 = sequence0;
+            //var sequence2 = sequence0;
+            //Console.WriteLine($"sequence 1 equals sequence 2 ? {sequence1.SequenceEqual(sequence2)}");
+            //// True because both reference the same object
+
+            //var sequence3 = new List<Department> { department1, department2, department3 };
+            //var sequence4 = new List<Department> { department1, department2, department3 };
+            //Console.WriteLine($"sequence 3 equals sequence 4 ? {sequence3.SequenceEqual(sequence4)}");
+            //// True because both have the same references in the same order
+
+            //var sequence5 = new List<Department> {
+            //    new Department { Id = 1, Title = "HR" },
+            //    new Department { Id = 2, Title = "IT" },
+            //    new Department { Id = 3, Title = "Finance" }
+            //};
+            //var sequence6 = new List<Department> {
+            //    new Department { Id = 1, Title = "HR" },
+            //    new Department { Id = 2, Title = "IT" },
+            //    new Department { Id = 3, Title = "Finance" }
+            //};
+            //Console.WriteLine($"sequence 5 equals sequence 6 ? {sequence5.SequenceEqual(sequence6)}");
+            //// False because both have different references even though the values are the same. To make it true,
+            //// we have overridden the Equals method in the Department class to compare values instead of references.
+
+            // ----------------------------------------------
         }
     }
 
@@ -447,5 +481,13 @@ namespace LINQ
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public override bool Equals(object? obj)
+        {
+            if (obj is Department other)
+            {
+                return this.Id == other.Id && this.Title == other.Title;
+            }
+            return false;
+        }
     }
 }
