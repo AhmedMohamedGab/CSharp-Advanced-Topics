@@ -48,16 +48,7 @@ namespace CSharpAdvanced
         {
             return (p.XCoord, p.YCoord);
         }
-
-        // Equals Override
-        public override bool Equals(object? obj)
-        {
-            if (obj is Point p)
-            {
-                return this == p;
-            }
-            return false;
-        }
+        // Explicit conversion is similar. Replace 'implicit' with 'explicit' in the above methods.
 
         // ToString Override
         public override string ToString()
@@ -65,16 +56,32 @@ namespace CSharpAdvanced
             return $"XCoord = {this.XCoord}, YCoord = {this.YCoord}";
         }
 
+        // Equals Override
+        public override bool Equals(object? obj)
+        {
+            if (obj is Point p)     // same as: if (obj != null && obj.GetType() == typeof(Point))
+            {
+                //return this.XCoord == p.XCoord && this.YCoord == p.YCoord;
+                return this == p;   // Reuse the == operator since it's already overloaded
+            }
+            return false;
+        }
+
         // GetHashCode Override
         public override int GetHashCode()
         {
+            if (this is null)
+            {
+                throw new NullReferenceException("Object is null");
+            }
+
             // Manual calculation for custom hash code
             //var hashCode = 17;
             //hashCode = hashCode * 23 + XCoord.GetHashCode();
             //hashCode = hashCode * 23 + YCoord.GetHashCode();
             //return hashCode;
 
-            // Or built-in method for automatic hash code generation
+            // Or use built-in method for automatic hash code generation
             return HashCode.Combine(this.XCoord, this.YCoord);
         }
     }

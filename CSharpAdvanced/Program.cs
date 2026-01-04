@@ -149,7 +149,7 @@ namespace CSharpAdvanced
             //Point p5 = new Point(10, 20);
             //Point p6 = new Point(10, 20);
             //// Equals Override
-            //Console.WriteLine($"p2.Equals(p1) ? {p5.Equals(p6)}\n");
+            //Console.WriteLine($"p5.Equals(p6) ? {p5.Equals(p6)}\n");
             //// ToString Override
             //Console.WriteLine($"Point p5: {p5}\n");
             //// GetHashCode Override
