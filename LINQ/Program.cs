@@ -21,6 +21,7 @@ namespace LINQ
             // Element Operations (ElementAt, ElementAtOrDefault, First, FirstOrDefault, Last, LastOrDefault, Single, SingleOrDefault)
             // Sequence Equality (SequenceEqual)
             // Concatenation (Concat)
+            // Aggregation (Aggregate, AggregateBy, Count, LongCount, CountBy, Max, MaxBy, Min, MinBy, Sum, Average)
 
             // ----------------------------------------------
 
@@ -489,6 +490,81 @@ namespace LINQ
             //}
 
             // ----------------------------------------------
+
+            // Aggregation (Aggregate, AggregateBy, Count, LongCount, CountBy, Max, MaxBy, Min, MinBy, Sum, Average)
+
+            //var numbers = new List<int> { 1, 2, 3, 4, 5 };
+
+            //var employees = new List<Employee>
+            //{
+            //    new Employee { Name = "Alice", DepartmentId = 1, Salary = 6000, Skills = { "C#", "SQL"} },
+            //    new Employee { Name = "Bob", DepartmentId = 2, Salary = 6000, Skills = { "HTML", "CSS", "JavaScript", "Node.js", "Express.js"} },
+            //    new Employee { Name = "David", DepartmentId = 2, Salary = 7000, Skills = { ".NET", "Azure", "APIs", "Scripting"} },
+            //    new Employee { Name = "Charlie", DepartmentId = 3, Salary = 5000, Skills = { "PHP", "Laravel", "SOLID"} },
+            //    new Employee { Name = "Joe", DepartmentId = 3, Salary = 7000, Skills = { "Python", "Django", "Machine Learning", "Data Science", "AI"} }
+            //};
+
+            //// Aggregate
+            //var sumAggregate = numbers.Aggregate(0, (last, current) => last + current);
+            //Console.WriteLine($"Aggregate Sum: {sumAggregate}");
+
+            //var namesConcatenated = employees.Aggregate("", (emp1, emp2) => $"{emp1}, {emp2.Name}", e => e).TrimStart(", ");
+            //Console.WriteLine($"Names Concatenated: {namesConcatenated}");
+
+            //// AggregateBy acts like: GroupBy => Aggregate each group
+            //var maxSalaryPerDepartment = employees.AggregateBy(emp => emp.DepartmentId,
+            //    employees[0].Salary, (sal, emp) => sal < emp.Salary ? emp.Salary : sal);
+            //foreach (var kvp in maxSalaryPerDepartment)
+            //{
+            //    Console.WriteLine($"Department: {kvp.Key}, Max Salary: {kvp.Value}");
+            //}
+
+            //var employeesPerSalary = employees.AggregateBy(emp => emp.Salary, 0, (count, emp) => count + 1);
+            //foreach (var kvp in employeesPerSalary)
+            //{
+            //    Console.WriteLine($"Salary: {kvp.Key}, Number of Employees: {kvp.Value}");
+            //}
+            //Console.WriteLine("-----------------");
+
+            //// Count, LongCount, CountBy
+            //var totalEmployees = employees.Count();
+            //Console.WriteLine($"Total Employees: {totalEmployees}");
+
+            //var totalEmployeesLong = employees.LongCount();     // Same as Count but used for large collections
+            //Console.WriteLine($"Total Employees (LongCount): {totalEmployeesLong}");
+
+            //var totalEmployeesWithSalaryAbove6000 = employees.Count(e => e.Salary > 6000);  // Count with predicate
+            //Console.WriteLine($"Total Employees with Salary > 6000: {totalEmployeesWithSalaryAbove6000}");
+
+            //var countBySalary = employees.CountBy(e => e.Salary);   // CountBy acts like: GroupBy => Count in each group
+            //foreach (var kvp in countBySalary)
+            //{
+            //    Console.WriteLine($"Salary: {kvp.Key}, Count: {kvp.Value}");
+            //}
+            //Console.WriteLine("-----------------");
+
+            //// Max, MaxBy, Min, MinBy
+            //var maxSalary = employees.Max(e => e.Salary);
+            //Console.WriteLine($"Max Salary: {maxSalary}");
+
+            //var employeeWithMaxSalary = employees.MaxBy(e => e.Salary);
+            //Console.WriteLine($"Employee with Max Salary: {employeeWithMaxSalary.Name}, Salary: {employeeWithMaxSalary.Salary}");
+
+            //var minSalary = employees.Min(e => e.Salary);
+            //Console.WriteLine($"Min Salary: {minSalary}");
+
+            //var employeeWithMinSalary = employees.MinBy(e => e.Salary);
+            //Console.WriteLine($"Employee with Min Salary: {employeeWithMinSalary.Name}, Salary: {employeeWithMinSalary.Salary}");
+            //Console.WriteLine("-----------------");
+
+            //// Sum, Average
+            //var totalSalary = employees.Sum(e => e.Salary);
+            //Console.WriteLine($"Total Salary: {totalSalary}");
+
+            //var averageSalary = employees.Average(e => e.Salary);
+            //Console.WriteLine($"Average Salary: {averageSalary}");
+
+            // ----------------------------------------------
         }
     }
 
@@ -504,6 +580,7 @@ namespace LINQ
         public string Name { get; set; }
         public int DepartmentId { get; set; }
         public List<string> Skills { get; set; } = new();
+        public double Salary { get; set; }
     }
 
     public class Department
