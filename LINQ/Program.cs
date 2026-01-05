@@ -24,6 +24,7 @@ namespace LINQ
             // Concatenation (Concat)
             // Aggregation (Aggregate, AggregateBy, Count, LongCount, CountBy, Max, MaxBy, Min, MinBy, Sum, Average)
             // Expression Trees
+            // IEnumerable vs IQueryable - Explained
 
             // ----------------------------------------------
 
@@ -595,6 +596,33 @@ namespace LINQ
             //var isEvenFunc = isEvenExpression.Compile();
             //Console.WriteLine($"Is 4 even? {isEvenFunc(4)}");
             //Console.WriteLine($"Is 7 even? {isEvenFunc(7)}");
+
+            // ----------------------------------------------
+
+            // IEnumerable vs IQueryable - Explained
+
+            // Both IEnumerable and IQueryable are used for querying collections, both use deferred execution.
+            // IQueryable inherits from IEnumerable.
+
+            // IEnumerable works with in-memory collections (LINQ to Objects).
+            // IQueryable works with out-of-memory collections (like databases) and can translate queries to native queries (like SQL).
+
+            // Use IEnumerable for in-memory collections or when you need to work with data immediately.
+            // Use IQueryable when working with large datasets or remote data sources for better performance. But why?
+            // Because IQueryable allows for query translation and optimization at the data source level, reducing data transfer and improving efficiency. Explanation please?
+            // IEnumerable objects are understanded only by .NET runtime, so when you apply a LINQ query on an IEnumerable collection,
+            // the entire collection is fetched into memory first, and then the query is executed in-memory. On the other hand,
+            // IQueryable objects have a query provider (EF Core) that translates query expressions into native queries understood by the data source (like SQL for databases).
+
+            // Example:
+            // We have a table of Employees in a database and we want to get employees with Salary > 6000.
+            // Using IEnumerable: fetches all data into memory first, then filters => Not efficient for large datasets.
+            //IEnumerable<Employee> employeesEnumerable = employees.Where(e => e.Salary > 6000);
+            // Using IQueryable: translates the query to SQL and fetches only the required data => More efficient.
+            //IQueryable<Employee> employeesQueryable = employees.AsQueryable().Where(e => e.Salary > 6000);
+
+            // In summary, both gets the same result, it is a matter of performance.
+            // Use IEnumerable for in-memory collections and IQueryable for out-of-memory collections.
 
             // ----------------------------------------------
         }
