@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq.Expressions;
 using System.Numerics;
 
 namespace LINQ
@@ -22,6 +23,7 @@ namespace LINQ
             // Sequence Equality (SequenceEqual)
             // Concatenation (Concat)
             // Aggregation (Aggregate, AggregateBy, Count, LongCount, CountBy, Max, MaxBy, Min, MinBy, Sum, Average)
+            // Expression Trees
 
             // ----------------------------------------------
 
@@ -563,6 +565,36 @@ namespace LINQ
 
             //var averageSalary = employees.Average(e => e.Salary);
             //Console.WriteLine($"Average Salary: {averageSalary}");
+
+            // ----------------------------------------------
+
+            // Expression Trees
+
+            //// Taking leaves from Expression Trees
+            //Expression<Func<int, bool>> myExpression = num => num > 5;
+
+            //ParameterExpression parameterExpression = myExpression.Parameters[0]; // 'num' parameter
+
+            //BinaryExpression bodyExpression = (BinaryExpression)myExpression.Body;  // 'num > 5' body
+            //ConstantExpression constantExpression = (ConstantExpression)bodyExpression.Right;   // '5' constant
+
+            //Console.WriteLine($"My Expression: " +
+            //    $"{parameterExpression.Name} => {parameterExpression.Name} {bodyExpression.NodeType} {constantExpression.Value}");
+
+            //// Constructing expression trees manually
+            //// Expression: num => num % 2 == 0
+            //ParameterExpression numEx = Expression.Parameter(typeof(int), "num");   // 'num' parameter
+            //ConstantExpression twoEx = Expression.Constant(2, typeof(int));         // constant '2'
+            //ConstantExpression zeroEx = Expression.Constant(0, typeof(int));        // constant '0'
+
+            //BinaryExpression modEx = Expression.Modulo(numEx, twoEx);   // num % 2
+            //BinaryExpression equalEx = Expression.Equal(modEx, zeroEx); // (num % 2) == 0
+
+            //Expression<Func<int, bool>> isEvenExpression = Expression.Lambda<Func<int, bool>>(equalEx, numEx);
+
+            //var isEvenFunc = isEvenExpression.Compile();
+            //Console.WriteLine($"Is 4 even? {isEvenFunc(4)}");
+            //Console.WriteLine($"Is 7 even? {isEvenFunc(7)}");
 
             // ----------------------------------------------
         }
