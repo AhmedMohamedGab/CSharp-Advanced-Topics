@@ -11,7 +11,6 @@ namespace LINQ
             // LINQ - Language Integrated Query
 
             // Table of Contents:
-
             // Projection and Filtering (Select, Where, OfType, SelectMany, Zip)
             // Sorting (OrderBy, OrderByDescending, ThenBy, ThenByDescending, Reverse)
             // Quantifiers (Any, All, Contains)
@@ -626,10 +625,6 @@ namespace LINQ
             // Use IEnumerable for in-memory collections and IQueryable for out-of-memory collections.
 
             // ----------------------------------------------
-
-            /*
-             * That's it for this comprehensive overview of LINQ in C#!
-             */
         }
     }
 
