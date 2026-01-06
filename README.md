@@ -5,6 +5,7 @@ Here's most of the advanced topics in C# with simple code examples in ONE soluti
 
 
 ## Table of Contents
+
 - **C# Advanced Topics**:
 1. Extension Methods
 2. Recursion
@@ -26,6 +27,13 @@ Here's most of the advanced topics in C# with simple code examples in ONE soluti
 5. Set Operations (Distinct, DistinctBy, Except, ExceptBy, Intersect, IntersectBy, Union, UnionBy)
 6. Joins (Join, LeftJoin, RightJoin, GroupJoin)
 7. Grouping (GroupBy, ToLookup)
+8. Generating Sequences (Range, Repeat, Empty, DefaultIfEmpty)
+9. Element Operations (ElementAt, ElementAtOrDefault, First, FirstOrDefault, Last, LastOrDefault, Single, SingleOrDefault)
+10. Sequence Equality (SequenceEqual)
+11. Concatenation (Concat)
+12. Aggregation (Aggregate, AggregateBy, Count, LongCount, CountBy, Max, MaxBy, Min, MinBy, Sum, Average)
+13. Expression Trees
+14. IEnumerable vs IQueryable - Explained
 
 
 ## Installation
